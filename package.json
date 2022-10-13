@@ -1,0 +1,53 @@
+{
+  "name": "lambda-push-notification-service",
+  "version": "1.0.0",
+  "description": "Lambda function push notification service using Expo server SDK.",
+  "author": {
+    "name": "Trevor Anderson",
+    "email": "T.AndersonProperty@gmail.com"
+  },
+  "license": "LicenseRef-LICENSE",
+  "repository": "https://github.com/Nerdware-LLC/lambda-push-notification-service",
+  "private": "true",
+  "homepage": "https://github.com/Nerdware-LLC/lambda-push-notification-service#readme",
+  "engines": {
+    "node": "^16.0.0",
+    "npm": "^8.0.0"
+  },
+  "type": "module",
+  "scripts": {
+    "build": "rm -rf ./build 2>/dev/null && tsc --project tsconfig.build.json",
+    "docker:build": "docker build -t nerdware/lambda-push-notification-service:1.0 .",
+    "ddb:start": "docker run -d -p 8000:8000 --rm --name push-service-ddb-local amazon/dynamodb-local 1>/dev/null",
+    "ddb:kill": "docker container kill push-service-ddb-local &>/dev/null",
+    "ddb:forceNew": "npm run ddb:kill ; npm run ddb:start",
+    "test": "npm run ddb:forceNew ; NODE_OPTIONS='--experimental-vm-modules --no-warnings' DOTENV_CONFIG_PATH=./src/.env jest",
+    "test:watch": "npm run test -- --watch ;        # Re-run tests when associated files change"
+  },
+  "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.186.0",
+    "@aws-sdk/lib-dynamodb": "^3.186.0",
+    "@sentry/node": "^7.15.0",
+    "@types/lodash.merge": "^4.6.7",
+    "expo-server-sdk": "^3.6.0"
+  },
+  "devDependencies": {
+    "@jest/types": "^29.1.2",
+    "@types/aws-lambda": "^8.10.107",
+    "@types/jest": "^29.1.2",
+    "@types/node": "^18.8.4",
+    "@typescript-eslint/eslint-plugin": "^5.40.0",
+    "@typescript-eslint/parser": "^5.40.0",
+    "dotenv": "^16.0.3",
+    "eslint": "^8.25.0",
+    "eslint-import-resolver-typescript": "^3.5.1",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jest": "^27.1.1",
+    "eslint-plugin-node": "^11.1.0",
+    "jest": "^29.1.2",
+    "nodemon": "^2.0.20",
+    "ts-jest": "^29.0.3",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.8.4"
+  }
+}

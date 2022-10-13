@@ -1,0 +1,12 @@
+######################################################################
+# dockerignore ENTRIES:
+
+# First, simply ignore everything, then add back only what's needed.
+*
+
+# Files needed by tsc to compile the source code
+!package*.json
+!tsconfig*.json
+!src/**/*
+
+######################################################################
