@@ -1,6 +1,6 @@
 {
   "name": "lambda-push-notification-service",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Lambda function push notification service using Expo server SDK.",
   "author": {
     "name": "Trevor Anderson",

@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 ---
 
 
+## [1.0.1](https://github.com/Nerdware-LLC/lambda-push-notification-service/compare/v1.0.0...v1.0.1) (2022-10-15)
+
+
+### Bug Fixes
+
+* **Dockerfile:** correct path syntax in Dockerfile, use LAMBDA_TASK_ROOT ([2cbfd98](https://github.com/Nerdware-LLC/lambda-push-notification-service/commit/2cbfd9840589b920d1360f2546487bd95a613019))
+
 # 1.0.0 (2022-10-15)
 
 
