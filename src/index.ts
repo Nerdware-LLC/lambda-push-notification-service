@@ -11,7 +11,6 @@ import {
  * This Lambda function has two invocation sources:
  * 1. fixit-api           async invocation with payload.pushNotifications
  * 2. EventBridge rule    "run-fetchPushReceipts-every-30-minutes"
- *
  */
 export const handler: Handler = async (event: PushServiceEvent) => {
   // TODO After we get 'event' structure printed out, make a better type for it (aws-lambda not helpful here)

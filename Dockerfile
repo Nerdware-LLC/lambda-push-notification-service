@@ -14,11 +14,8 @@ EXPOSE 8080
 # Explicitly set workdir
 WORKDIR ${LAMBDA_TASK_ROOT}
 
-# Copy over only the files necessary to run the Lambda function
-COPY package*.json function ${LAMBDA_TASK_ROOT}/
-
-# TODO rm this after testing file/dir placement within target (testing above COPY)
-RUN echo ./*
+# Copy over package.json files
+COPY package*.json ${LAMBDA_TASK_ROOT}/
 
 #---------------------------------------------------------------------
 # builder
@@ -27,10 +24,10 @@ RUN echo ./*
 FROM base as builder
 
 # Copy over the tsconfigs
-COPY tsconfig*.json ./
+COPY tsconfig*.json ${LAMBDA_TASK_ROOT}/
 
 # Copy over src files
-COPY src src/
+COPY src ${LAMBDA_TASK_ROOT}/src/
 
 # Install all dependencies
 RUN npm ci
@@ -45,7 +42,7 @@ RUN npm run build
 FROM base as prod
 
 # Copy over only the files needed in production
-COPY --from=builder function ./function/
+COPY --from=builder ${LAMBDA_TASK_ROOT}/function ${LAMBDA_TASK_ROOT}/function/
 
 # Install only the necessary dependencies
 RUN npm ci --omit=dev
