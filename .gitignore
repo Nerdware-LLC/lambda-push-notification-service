@@ -87,7 +87,8 @@ node_modules/
 ######################################################################
 # NERDWARE gitignore ENTRIES:
 
-build/
+# Ignore tsc build output dir
+function/
 
 # Notes
 TODO*
