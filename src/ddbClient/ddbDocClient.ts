@@ -3,7 +3,7 @@ import { DynamoDBDocumentClient } from "@aws-sdk/lib-dynamodb";
 
 export const ddbDocClient = DynamoDBDocumentClient.from(
   new DynamoDBClient({
-    region: process.env.AWS_REGION,
+    region: process.env.DYNAMODB_TABLE_REGION,
     ...(/^(dev|test)/i.test(process.env.NODE_ENV) && {
       endpoint: process.env.DYNAMODB_LOCAL_ENDPOINT_URL
     })
