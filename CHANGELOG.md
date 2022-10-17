@@ -5,6 +5,18 @@ All notable changes to this project will be documented in this file.
 ---
 
 
+# [1.1.0](https://github.com/Nerdware-LLC/lambda-push-notification-service/compare/v1.0.1...v1.1.0) (2022-10-17)
+
+
+### Bug Fixes
+
+* **env:** change env var 'AWS_REGION' to 'DYNAMODB_TABLE_REGION' ([263223e](https://github.com/Nerdware-LLC/lambda-push-notification-service/commit/263223e5a68e90af6352e98f769fcaab1f7922bb))
+
+
+### Features
+
+* **ecr-push:** add 'latest' to docker img tags ([4552fc9](https://github.com/Nerdware-LLC/lambda-push-notification-service/commit/4552fc9f92d49d532c133f09631ab0794391311a))
+
 ## [1.0.1](https://github.com/Nerdware-LLC/lambda-push-notification-service/compare/v1.0.0...v1.0.1) (2022-10-15)
 
 
