@@ -40,7 +40,7 @@ jobs:
           TRIGGER_EVENT_NAME: ${{ github.event_name }}
         run: |
           IMAGE_REPO="$ECR_REGISTRY/$ECR_REPOSITORY"
-          IMAGE_TAGS=()
+          IMAGE_TAGS=('latest')
 
           REF="${GITHUB_REF#refs/*/}" && REF_TAG="${REF%/merge}"
 
