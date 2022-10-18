@@ -47,8 +47,6 @@ COPY --from=builder ${LAMBDA_TASK_ROOT}/function ${LAMBDA_TASK_ROOT}/function/
 # Install only the necessary dependencies
 RUN npm ci --omit=dev
 
-# TODO do we need USER here? What to use for Lambda?
-
 # The Lambda handler function must be the CMD instruction
 CMD [ "index.handler" ]
 

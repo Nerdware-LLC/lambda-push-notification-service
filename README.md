@@ -14,13 +14,10 @@
 
 ## 🗺 Project Layout
 
-<!-- TODO update below info -->
-
 ```ascii
 .
 ├── .github/        # GitHub Actions and other GitHub-related files
-├── function/       # tsc-compiled Lambda fn runtime files
-└── src/            # TypeScript source code files
+└── src/            # TypeScript source code files (tsc compiles src to outDir function/)
 ```
 
 ## 📝 License
