@@ -17,7 +17,6 @@ export const ddbClient = {
     items: Array<Record<string, any>>,
     batchUpsertItemsOpts: DDBSingleTableCommandParameters<typeof BatchWriteCommand> = {}
   ) => {
-    // TODO Add handling to batchUpsertItems for `result.UnprocessedItems`
     await ddbDocClient.send(
       new BatchWriteCommand({
         ...batchUpsertItemsOpts,
@@ -76,7 +75,6 @@ export const ddbClient = {
     primaryKeys: Array<Record<string, string>>,
     batchDeleteItemsOpts: DDBSingleTableCommandParameters<typeof BatchWriteCommand> = {}
   ) => {
-    // TODO Add handling to batchDeleteItems for `result.UnprocessedItems`
     await ddbDocClient.send(
       new BatchWriteCommand({
         ...batchDeleteItemsOpts,

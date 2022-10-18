@@ -14,6 +14,7 @@ const jestConfig: JestConfigWithTsJest = {
   ],
   coverageDirectory: "coverage",
   extensionsToTreatAsEsm: [".ts"],
+  globalSetup: "<rootDir>/src/__tests__/globalSetup.cjs",
   moduleFileExtensions: ["ts", "js", "cts", "cjs", "json"],
   preset: "ts-jest/presets/js-with-ts-esm",
   rootDir: "./",
