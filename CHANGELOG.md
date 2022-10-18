@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 ---
 
 
+# [1.2.0](https://github.com/Nerdware-LLC/lambda-push-notification-service/compare/v1.1.0...v1.2.0) (2022-10-18)
+
+
+### Features
+
+* **tests:** add Jest globalSetup and test 'pushReceiptsCRUD' ([b7b5a0c](https://github.com/Nerdware-LLC/lambda-push-notification-service/commit/b7b5a0cc02166a95adc1b292e0e091047311d447))
+
 # [1.1.0](https://github.com/Nerdware-LLC/lambda-push-notification-service/compare/v1.0.1...v1.1.0) (2022-10-17)
 
 
