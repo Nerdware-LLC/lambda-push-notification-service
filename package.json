@@ -25,7 +25,7 @@
     "test:watch": "npm run test -- --watch ;        # Re-run tests when associated files change"
   },
   "dependencies": {
-    "@aws-sdk/client-dynamodb": "^3.186.0",
+    "@aws-sdk/client-dynamodb": "^3.398.0",
     "@aws-sdk/lib-dynamodb": "^3.186.0",
     "@sentry/node": "^7.15.0",
     "@types/lodash.merge": "^4.6.7",
